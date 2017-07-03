@@ -4,7 +4,31 @@ Here is the reproducible code for BI-ENRICH pathway analysis that is applied in 
 
 ## load data
 
-```{
+```{r, eval=F}
+load("data/annotation_matrix_gs.rda") # annotation_matrix_gs
+colnames(annotation_matrix_gs)
+```
+A matrix indicate annotation of 16903 genes in 6121 gene sets.
+
+```{r, eval=F}
+load("data/candidategeneset.rda") # annotation_matrix_gs
+head(cs) # two columns: gene name; loci id
+```
+
+## BI-ENRICH pathway enrichment
+
+### proprecessing
+remove candidate gene that not included in any gene set.
+```{r,eval=F}
+geneset <- cs[[1]]
+genes <- rownames(annotation_matrix_gs)
+geneset <- intersect(geneset,genes)
+cs <- cs[!is.na(match(cs[[1]],geneset)),]
+csv <- match(genes,geneset)
+csv[!is.na(csv)]<- 1
+csv[is.na(csv)] <- 0
+```
+
 
 ## pesudo code
 
