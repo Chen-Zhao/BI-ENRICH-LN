@@ -38,11 +38,13 @@ annotation_matrix <- zcs2gs_res_list[[2]]
 save(annotation_matrix,file="annotation_matrix_gs_sk.rda")
 head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 ```
+```
            z                   anno
 104 5.689770 GO_LOCOMOTORY_BEHAVIOR
 115 5.566328            GO_BEHAVIOR
 14  5.480649     UNIKB_Neurogenesis
 
+```
 ### calculate random sampling base z-score
 
 ```{r, eval=F}
