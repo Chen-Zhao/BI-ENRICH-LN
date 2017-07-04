@@ -4,13 +4,13 @@ Here is the reproducible code for BI-ENRICH pathway analysis that applied for fi
 
 ## load data
 
-```{r, eval=F}
+```r
 load("data/annotation_matrix_gs.rda") # annotation_matrix_gs
 colnames(annotation_matrix_gs)
 ```
 A matrix indicate annotation of 16903 genes in 6121 gene sets.
 
-```{r, eval=F}
+```r
 load("data/candidategeneset.rda") # annotation_matrix_gs
 head(cs) # two columns: gene name; loci id
 ```
@@ -19,7 +19,7 @@ head(cs) # two columns: gene name; loci id
 
 ### calculate z score 
 
-```{r, eval=F}
+```r
 
 ncores = 2;                # number of cores for parallel computing
 bienrich_pval = 0.05;      # p-value cutoff to perform greedy search for the potention multiple mixed gene sets.
@@ -38,6 +38,12 @@ annotation_matrix <- zcs2gs_res_list[[2]]
 save(annotation_matrix,file="annotation_matrix_gs_sk.rda")
 head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 ```
+
+|           |z|                   anno|
+|---|:---:|---:|	   
+104 |5.689770 |GO_LOCOMOTORY_BEHAVIOR|
+115 |5.566328|            GO_BEHAVIOR|
+14  |5.480649 |    UNIKB_Neurogenesis|
 
 ```
            z                   anno
