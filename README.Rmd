@@ -100,7 +100,7 @@ zcs2gs_res_list <- parLapply(cl,1:1000,function(i,...){
 				             shrinking_geneset=FALSE)
 				save(zcs2tsres,file=paste("res.gs.",simi,".Rda",sep="")) ; 
 				zcs2tsres},
-		              annotation_matrix_gs = annotation_matrix_gs, 
+		              annotation_matrix_gs = annotation_matrix, 
 			      ncores=ncores, 
 			      bienrich_pval=bienrich_pval)
 
