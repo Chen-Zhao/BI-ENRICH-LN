@@ -28,10 +28,10 @@ shrinking_geneset = TRUE ; # shrinking the all the gene sets by full overlap, th
 source("src/calculate_geneset_zscore.R")
 
 zcs2gs_res_list <- calculate_geneset_zscore( cs=cs,
-										annotation_matrix_gs = annotation_matrix_gs, 
-										ncores=ncores, 
-										bienrich_pval=bienrich_pval,
-										shrinking_geneset=TRUE)
+				             annotation_matrix_gs = annotation_matrix_gs, 
+					     ncores=ncores, 
+					     bienrich_pval=bienrich_pval,
+				             shrinking_geneset=TRUE)
 
 zcs2gs_res <- zcs2gs_res_list[[1]]
 annotation_matrix <- zcs2gs_res_list[[2]]
