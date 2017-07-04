@@ -1,6 +1,6 @@
 # BI-ENRICH-LN
 
-Here is the reproducible code for BI-ENRICH pathway analysis that is applied in the paper, Meta-analysis of over 100,000 individuals of European ancestry identifies 19 genome-wide significant risk loci for restless legs syndrome.
+Here is the reproducible code for BI-ENRICH pathway analysis that applied for figure 2 in the paper, Meta-analysis of over 100,000 individuals of European ancestry identifies 19 genome-wide significant risk loci for restless legs syndrome. 
 
 ## load data
 
@@ -17,19 +17,36 @@ head(cs) # two columns: gene name; loci id
 
 ## BI-ENRICH pathway enrichment
 
-### proprecessing
-remove candidate gene that not included in any gene set.
-```{r,eval=F}
-geneset <- cs[[1]]
-genes <- rownames(annotation_matrix_gs)
-geneset <- intersect(geneset,genes)
-cs <- cs[!is.na(match(cs[[1]],geneset)),]
-csv <- match(genes,geneset)
-csv[!is.na(csv)]<- 1
-csv[is.na(csv)] <- 0
+### calculate z score 
+
+```{r, eval=F}
+
+ncores = 2;                # number of cores for parallel computing
+bienrich_pval = 0.05;      # p-value cutoff to perform greedy search for the potention multiple mixed gene sets.
+shrinking_geneset = TRUE ; # shrinking the all the gene sets by full overlap, the larger one will be remove to accelerate computing 
+
+source("src/calculate_geneset_zscore.R")
+
+zcs2gs_res_list <- calculate_geneset_zscore( cs=cs,
+										annotation_matrix_gs = annotation_matrix_gs, 
+										ncores=ncores, 
+										bienrich_pval=bienrich_pval,
+										shrinking_geneset=TRUE)
+
+zcs2gs_res <- zcs2gs_res_list[[1]]
+annotation_matrix <- zcs2gs_res_list[[2]]
+save(annotation_matrix,file="annotation_matrix_gs_sk.rda")
+head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 ```
+           z                   anno
+104 5.689770 GO_LOCOMOTORY_BEHAVIOR
+115 5.566328            GO_BEHAVIOR
+14  5.480649     UNIKB_Neurogenesis
 
+### calculate random sampling base z-score
 
-## pesudo code
+```{r, eval=F}
+
+```
 
 
