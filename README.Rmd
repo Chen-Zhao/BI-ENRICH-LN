@@ -49,7 +49,6 @@ head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 
 ```{r, eval=F}
 
-source("src/calculate_geneset_zscore_sampling.R")
 permute_gs <- calculate_geneset_zscore_sampling(times=10000,cs,annotation_matrix, ncores=8, bienrich_pval=0.05,shrinking_geneset=FALSE){
 save(permute_gs,file="permute_gs.1000.Rda")
 
@@ -59,7 +58,6 @@ save(permute_gs,file="permute_gs.1000.Rda")
 
 ```{r, eval=F}
 
-source("src/calculate_geneset_sampling_adjusted.R")
 gs_enrich_stats <- calculate_geneset_sampling_adjusted(zcs2gs_res,permute_gs)
 head(gs_enrich_stats[order(gs_enrich_stats$zraw,decreasing=T),],3)
 
