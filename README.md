@@ -65,9 +65,9 @@ head(gs_enrich_stats[order(gs_enrich_stats$zraw,decreasing=T),],3)
 
 |                                      |Geneset|       pvalue|   fdr|     zraw|                        genes|
 |---|:---:|:---:|:---:|:---:|---:|
-|GO_LOCOMOTORY_BEHAVIOR   |GO_LOCOMOTORY_BEHAVIOR |3.036278e-07 |0.000 |5.689770 |      BTBD9 CLN6 HOXB8 MEIS1
-|GO_BEHAVIOR              |          GO_BEHAVIOR |1.220011e-04 |0.007 |5.566328 |BTBD9 CLN6 DACH1 HOXB8 MEIS1
-|UNIKB_Neurogenesis       |  UNIKB_Neurogenesis |2.691943e-06 |0.000 |5.480649 |     MDGA1 MYT1 NTNG1 SEMA6D
+|GO_LOCOMOTORY_BEHAVIOR   |GO_LOCOMOTORY_BEHAVIOR |3.0363e-07 |0.000 |5.689770 |      BTBD9 CLN6 HOXB8 MEIS1
+|GO_BEHAVIOR              |          GO_BEHAVIOR |1.2200e-04 |0.007 |5.566328 |BTBD9 CLN6 DACH1 HOXB8 MEIS1
+|UNIKB_Neurogenesis       |  UNIKB_Neurogenesis |2.6919e-06 |0.000 |5.480649 |     MDGA1 MYT1 NTNG1 SEMA6D
 
 
 
