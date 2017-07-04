@@ -49,7 +49,7 @@ head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 
 ```r
 
-permute_gs <- calculate_geneset_zscore_sampling(times=10000,cs,annotation_matrix, ncores=8, bienrich_pval=0.05,shrinking_geneset=FALSE){
+permute_gs <- calculate_geneset_zscore_sampling(times=10000,cs,annotation_matrix, ncores=8, bienrich_pval=0.05,shrinking_geneset=FALSE)
 save(permute_gs,file="permute_gs.1000.Rda")
 
 ```
