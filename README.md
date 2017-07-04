@@ -63,7 +63,7 @@ head(gs_enrich_stats[order(gs_enrich_stats$zraw,decreasing=T),],3)
 
 ```
 
-|                                      |Geneset|       pvalue|   fdr|     zraw|                        genes|
+|                                      |Geneset|       pvalue(sampling)|   fdr|     zraw|                        genes|
 |---|:---:|:---:|:---:|:---:|---:|
 |GO_LOCOMOTORY_BEHAVIOR   |GO_LOCOMOTORY_BEHAVIOR |3.0363e-07 |0.000 |5.689770 |      BTBD9 CLN6 HOXB8 MEIS1
 |GO_BEHAVIOR              |          GO_BEHAVIOR |1.2200e-04 |0.007 |5.566328 |BTBD9 CLN6 DACH1 HOXB8 MEIS1
@@ -122,7 +122,7 @@ head(gsemp[order(gsemp[,4]),])[1:3,]
 
 
 
-|                      |               geneset  |pvalue|   fdr|     z|
+|                      |               geneset  |pvalue(perm)|   fdr|     z|
 |---|:---:|:---:|:---:|---:|
 |GO_LOCOMOTORY_BEHAVIOR| GO_LOCOMOTORY_BEHAVIOR  |0.002 |0.029| 5.689770|
 |GO_DNA_REPAIR         |          GO_DNA_REPAIR  |0.005 |0.036| 4.978007|
