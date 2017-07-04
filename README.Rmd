@@ -4,11 +4,6 @@ Here is the reproducible code for BI-ENRICH pathway analysis that applied for fi
 
 ## load data
 
-<!-- 
-a	b	c
-c	d	e
---> 
-
 ```{r, eval=F}
 load("data/annotation_matrix_gs.rda") # annotation_matrix_gs
 colnames(annotation_matrix_gs)
