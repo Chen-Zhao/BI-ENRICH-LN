@@ -92,12 +92,12 @@ zcs2gs_res_list <- parLapply(cl,1:1000,function(i,...){
 			                            simi+2,
 						    ".clumped.top20.gene",sep=""),
 						    sep="\t",header = F,stringsAsFactors = F)[,2:1] ; 
-			        source("src/parcalculate_geneset_zscore.R")
+			        source("src/calculate_geneset_zscore.R")
 			        parcalculate_geneset_zscore( cs=cs,
 				             annotation_matrix_gs = annotation_matrix_gs, 
 					     ncores=ncores, 
 					     bienrich_pval=bienrich_pval,
-				             shrinking_geneset=TRUE)[[1]]
+				             shrinking_geneset=FALSE)
 				save(zcs2tsres,file=paste("res.gs.",simi,".Rda",sep="")) ; 
 				zcs2tsres},
 		              annotation_matrix_gs = annotation_matrix_gs, 
