@@ -117,7 +117,7 @@ empvalue <- sapply(1:nrow(d),function(x){
 })
 
 gsemp <- data.frame(geneset=zcs2gs_res[,2],pvalue=empvalue,fdr=p.adjust(empvalue,"fdr"), rawz = zcs2gs_res[,1])
-head(gsemp[order(gsemp[,4],decreasing = T),])[1:3,]
+head(gsemp[order(gsemp[,4]),])[1:3,]
 
 ```
 
