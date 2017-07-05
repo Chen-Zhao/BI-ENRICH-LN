@@ -50,19 +50,20 @@ calculate_geneset_zscore <- function(cs,annotation_matrix_gs, ncores=8, bienrich
 	  },mc.cores=ncores)
 	  unlist(z)
 	}
-	f_zcs2gs_geneset_mc <- function(cs,mtxg,geneset,ncores=8){
-	  require(parallel)
-	  z <- mclapply(1:ncol(mtxg),function(x){
-		x<-mtxg[,x]
-		x=factor(x,levels = c(0,1));
-		y=factor(cs,levels = c(0,1));
-		f <- fisher.test(table(cs,x))
-		p <- f$p.value
-		s <- ifelse(f$estimate>1,1,-1)
-		s*qnorm(p/2,lower.tail = F)
-	  },mc.cores=ncores)
-	  unlist(z)
-	}
+#
+#	f_zcs2gs_geneset_mc <- function(cs,mtxg,geneset,ncores=8){
+#	  require(parallel)
+#	  z <- mclapply(1:ncol(mtxg),function(x){
+#		x<-mtxg[,x]
+#		x=factor(x,levels = c(0,1));
+#		y=factor(cs,levels = c(0,1));
+#		f <- fisher.test(table(cs,x))
+#		p <- f$p.value
+#		s <- ifelse(f$estimate>1,1,-1)
+#		s*qnorm(p/2,lower.tail = F)
+#	  },mc.cores=ncores)
+#	  unlist(z)
+#	}
 	f_zg2cs <- function(ga,zcs2gs){
 	  a <- cor.test(zcs2gs,ga) # logistic regression, anova, cor.tes, bayeslm, and t.test. anova/cor.test are identical and is the best.
 	  p <- a$p.value
