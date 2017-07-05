@@ -84,7 +84,7 @@ calculate_geneset_zscore <- function(cs,annotation_matrix_gs, ncores=8, bienrich
 	csv <- match(genes,geneset)
 	csv[!is.na(csv)]<- 1
 	csv[is.na(csv)] <- 0
-	ncores=12
+	ncores=ncores
 	zcs2gs <- f_zcs2gs_mc(csv, annotation_matrix,ncores ) 
 	anno[which(zcs2gs>qnorm(1e-4,lower.tail=F))]
 	anno[order(zcs2gs,decreasing = T)][1:10]
@@ -115,7 +115,7 @@ calculate_geneset_zscore <- function(cs,annotation_matrix_gs, ncores=8, bienrich
 	  csv <- match(genes_tmp,geneset_tmp)
 	  csv[!is.na(csv)]<- 1
 	  csv[is.na(csv)] <- 0
-	  ncores=12
+	  ncores=ncores
 	  zcs2gs <- f_zcs2gs_mc(csv, annotation_matrix,ncores ) 
 	  if(length(x)==1){
 		  zg <- annotation_matrix[x,]#*annotation_matrix_weigth
