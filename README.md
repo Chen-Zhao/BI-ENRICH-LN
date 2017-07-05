@@ -2,6 +2,12 @@
 
 The code here is an reproducible example of BI-ENRICH pathway analysis that was applied for figure 2 in the paper, Meta-analysis of over 100,000 individuals of European ancestry identifies 19 genome-wide significant risk loci for restless legs syndrome. 
 
+## hardware
+
+| item | configuration|
+|---|---:|
+|CPU| 16 cores, 32 threads; 2 x Xeon E5-2630 v3 (2.4GHz); |
+|RAM| 128G ; 8 x 16G Samsung DIMM (2133 MHz); |
 
 ## load data
 
