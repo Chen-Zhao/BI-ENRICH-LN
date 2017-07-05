@@ -20,7 +20,6 @@ head(cs) # two columns: gene name; loci id
 ### calculate z score 
 
 ```r
-
 ncores = 2;                # number of cores for parallel computing
 bienrich_pval = 0.05;      # p-value cutoff to perform greedy search for the potention multiple mixed gene sets.
 shrinking_geneset = TRUE ; # shrinking the all the gene sets by full overlap, the larger one will be remove to accelerate computing 
@@ -48,19 +47,17 @@ head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 ### calculate random sampling z-score
 
 ```r
-
 permute_gs <- calculate_geneset_zscore_sampling(times=10000,cs,annotation_matrix, ncores=8, bienrich_pval=0.05,shrinking_geneset=FALSE)
 save(permute_gs,file="permute_gs.1000.Rda")
-
+# the computing will take few hours; you can load data/permute_gs.1000.Rda for the next step;
+load("data/permute_gs.1000.Rda") 
 ```
 
 ### calculate random sampling adjusted significance
 
 ```r
-
 gs_enrich_stats <- calculate_geneset_sampling_adjusted(zcs2gs_res,permute_gs)
 head(gs_enrich_stats[order(gs_enrich_stats$zraw,decreasing=T),],3)
-
 ```
 
 |Geneset|       pvalue(sampling)|   fdr|     zraw|                        genes|
