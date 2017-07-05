@@ -5,6 +5,7 @@ calculate_geneset_zscore <- function(cs,annotation_matrix_gs, ncores=8, bienrich
 	# bienrich_pval: p-value cutoff to perform greedy search for the potention multiple mixed gene sets.
 	# shrinking_geneset: shrinking the candidate gene set by full overlap, the larger one will be remove to accelerate computing 
 	
+	# several basic funtions to calculate z-scores are repeated in different to make a fesiable in parallel computing
 	f_zcs2gs_geneset_mc <- function(csv,mtxg,geneset,annoted,ncores=8,rm.annoted=T){
 	  annotedgene <- as.numeric(apply(data.frame(mtxg[,annoted]),1,max))
 	  if(rm.annoted){
