@@ -1,6 +1,6 @@
 # BI-ENRICH-LN
 
-The code here is an example of BI-ENRICH pathway analysis that was applied for figure 2 in the paper, Meta-analysis of over 100,000 individuals of European ancestry identifies 19 genome-wide significant risk loci for restless legs syndrome. 
+The code here is an reproducible example of BI-ENRICH pathway analysis that was applied for figure 2 in the paper, Meta-analysis of over 100,000 individuals of European ancestry identifies 19 genome-wide significant risk loci for restless legs syndrome. 
 
 
 ## load data
