@@ -88,7 +88,7 @@ head(gs_enrich_stats[order(gs_enrich_stats$zraw,decreasing=T),],3)
 ##   better to use cluster to accelerate the 1000 GWAS test and z-score calculation; 
 
 library(parallel)
-cl = makeCluster(rep('localhost',)) ; # a simple example for a SMP linux machine
+cl = makeCluster(rep('localhost',2)) ; # a simple example for a SMP linux machine
 zcs2gs_res_list <- parLapply(cl,1:1000,function(simi,...){
                                 cs = read.table(
 			                     paste("data/perm_null_GWAS/ALL_HWE5_Info05.HCT005.GENO020.dbSNP146.",
