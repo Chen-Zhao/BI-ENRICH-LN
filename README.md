@@ -54,7 +54,10 @@ head(zcs2gs_res[order(zcs2gs_res[,1],decreasing=T),],3)
 ### calculate random sampling z-score
 
 ```r
-permute_gs <- calculate_geneset_zscore_sampling(times=1000,cs,annotation_matrix, ncores=8, bienrich_pval=0.05,shrinking_geneset=FALSE)
+permute_gs <- calculate_geneset_zscore_sampling(times=1000,
+                                                cs,annotation_matrix, 
+						ncores=8, bienrich_pval=0.05,
+						shrinking_geneset=FALSE)
 save(permute_gs,file="permute_gs.1000.Rda")
 # the computing will take few hours; you can load data/permute_gs.1000.Rda for the next step;
 load("data/permute_gs.1000.Rda") 
