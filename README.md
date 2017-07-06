@@ -29,7 +29,7 @@ head(cs) # two columns: gene name; loci id
 ```r
 ncores = 12;               # number of cores for parallel computing
 bienrich_pval = 0.05;      # p-value cutoff to perform greedy search for the potention multiple mixed gene sets.
-shrinking_geneset = TRUE ; # shrinking the all the gene sets by full overlap, the larger one will be remove to accelerate computing 
+shrinking_geneset = TRUE ; # remove large and redundant gene sets to accelerate computing 
 
 source("src/calculate_geneset_zscore.R")
 
